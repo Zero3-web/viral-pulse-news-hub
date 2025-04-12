@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark-mode">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+  <!-- Barra de progreso -->
+  <div class="progress-container">
+    <div class="progress-bar" id="scrollProgressBar"></div>
+  </div>
+
   <header>
     <div class="logo">Viral<span>Pulse</span></div>
+    
+    <div class="search-container">
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Buscar noticias...">
+        <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+    
     <nav>
       <ul>
         <li><a href="index.html" class="active">Inicio</a></li>
@@ -20,6 +33,16 @@
         <li><a href="humor.html">Comedia</a></li>
       </ul>
     </nav>
+    
+    <div class="theme-toggle">
+      <input type="checkbox" id="theme-switch" class="theme-switch">
+      <label for="theme-switch" class="theme-label">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+        <div class="ball"></div>
+      </label>
+    </div>
+    
     <div class="mobile-menu-btn">
       <span></span>
       <span></span>
@@ -35,8 +58,66 @@
       </div>
     </section>
 
+    <section class="trending-highlight">
+      <div class="container">
+        <div class="highlight-grid">
+          <div class="main-highlight">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1" alt="Noticia principal">
+              <div class="category-tag">Actualidad</div>
+            </div>
+            <div class="article-content">
+              <div class="article-author">Por Diego Pecho</div>
+              <h2>Famoso banco eliminará cuentas desde HOY por no cumplir con este requisito: tu dinero está en PELIGRO</h2>
+              <p>Importantes cambios en las políticas bancarias afectarán a miles de usuarios. Entérate qué debes hacer para proteger tus ahorros.</p>
+              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          
+          <div class="secondary-highlights">
+            <article class="highlight-card">
+              <div class="article-image">
+                <img src="https://images.unsplash.com/photo-1537365587684-f490dff69c56" alt="Noticia de espectáculos">
+                <div class="category-tag">Espectáculos</div>
+              </div>
+              <div class="article-content">
+                <div class="article-author">Por Espectáculos</div>
+                <h3>Jefferson Farfán hace ACUSACIÓN contra Darinka Ramírez sobre su hija y se NIEGA a separarse de ella</h3>
+                <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </article>
+            
+            <article class="highlight-card">
+              <div class="article-image">
+                <img src="https://images.unsplash.com/photo-1553531889-56cc480ac5cb" alt="Noticia de espectáculos">
+                <div class="category-tag">Espectáculos</div>
+              </div>
+              <div class="article-content">
+                <div class="article-author">Por Estefani Hoyos</div>
+                <h3>Darinka Ramírez pide más de 3 mil soles de pensión alimenticia a Jefferson Farfán y otros pagos</h3>
+                <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </article>
+            
+            <article class="highlight-card">
+              <div class="article-image">
+                <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167" alt="Noticia de actualidad">
+                <div class="category-tag">Actualidad</div>
+              </div>
+              <div class="article-content">
+                <div class="article-author">Por Actualidad</div>
+                <h3>Sicarios matan sin piedad a joven madre cerca de comisaría del Callao: deja dos hijos en la orfandad</h3>
+                <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="featured">
       <div class="container">
+        <h2 class="section-title">Artículos Destacados</h2>
         <div class="featured-articles">
           <article class="featured-article">
             <div class="article-image">
@@ -145,6 +226,19 @@
       </div>
     </div>
   </footer>
+
+  <!-- Resultados de búsqueda modal -->
+  <div class="search-results-modal" id="searchResultsModal">
+    <div class="search-results-content">
+      <div class="search-results-header">
+        <h3>Resultados de búsqueda</h3>
+        <button id="closeSearchResults"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="search-results-body" id="searchResultsList">
+        <!-- Los resultados se cargarán dinámicamente aquí -->
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
