@@ -769,8 +769,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1500);
     
     // Mejorar filtros de categoría con estilos
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    
     filterBtns.forEach(btn => {
         btn.addEventListener('mouseenter', () => {
             if (!btn.classList.contains('active')) {
