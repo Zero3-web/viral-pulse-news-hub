@@ -1,26 +1,151 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>viral-pulse-news-hub</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viral Pulse - Lo Más Viral de la Semana</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Viral<span>Pulse</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="tendencias.html">Tendencias</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="humor.html">Comedia</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
 
-    <meta property="og:title" content="viral-pulse-news-hub" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1 class="main-title">Lo Más Viral de la Semana</h1>
+        <div class="highlight-bar"></div>
+      </div>
+    </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <section class="featured">
+      <div class="container">
+        <div class="featured-articles">
+          <article class="featured-article">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" alt="Tecnología del futuro">
+              <div class="category-tag">Tecnología</div>
+            </div>
+            <div class="article-content">
+              <h2>La IA que está revolucionando la forma en que trabajamos</h2>
+              <p>Un nuevo sistema de inteligencia artificial promete automatizar tareas repetitivas y aumentar la productividad en un 200%.</p>
+              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+          <article class="featured-article">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" alt="Tendencia en redes sociales">
+              <div class="category-tag">Social</div>
+            </div>
+            <div class="article-content">
+              <h2>El reto viral que está causando furor en TikTok</h2>
+              <p>Millones de usuarios están participando en este desafío que combina baile y solidaridad. ¿Te animarías a intentarlo?</p>
+              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="featured-article">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" alt="Ciberseguridad">
+              <div class="category-tag">Seguridad</div>
+            </div>
+            <div class="article-content">
+              <h2>Alerta: Nueva forma de hackeo afecta a millones de usuarios</h2>
+              <p>Expertos advierten sobre una sofisticada técnica de phishing que ha comprometido datos de usuarios en todo el mundo.</p>
+              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="container">
+        <h2 class="section-title">Explora Nuestras Categorías</h2>
+        <div class="category-buttons">
+          <a href="tendencias.html" class="category-btn">
+            <i class="fas fa-chart-line"></i>
+            <span>Tendencias</span>
+          </a>
+          <a href="noticias.html" class="category-btn">
+            <i class="fas fa-newspaper"></i>
+            <span>Noticias</span>
+          </a>
+          <a href="humor.html" class="category-btn">
+            <i class="fas fa-laugh-beam"></i>
+            <span>Comedia</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Mantente Actualizado</h2>
+          <p>Suscríbete a nuestro boletín para recibir lo más viral directamente en tu correo.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Tu correo electrónico" required>
+            <button type="submit">Suscribirse</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <div class="logo">Viral<span>Pulse</span></div>
+          <p>Tu fuente diaria de tendencias, noticias y comedia.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="tendencias.html">Tendencias</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="humor.html">Comedia</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Síguenos</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 ViralPulse. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tendencias de Hoy - Viral Pulse</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Viral<span>Pulse</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tendencias.html" class="active">Tendencias</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="humor.html">Comedia</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1 class="main-title">Tendencias de Hoy</h1>
+        <div class="highlight-bar"></div>
+      </div>
+    </section>
+
+    <section class="trending-articles">
+      <div class="container">
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="tech">Tecnología</button>
+          <button class="filter-btn" data-filter="social">Social</button>
+          <button class="filter-btn" data-filter="entertainment">Entretenimiento</button>
+        </div>
+        
+        <div class="articles-grid">
+          <article class="article-card" data-category="tech">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" alt="Tecnología del futuro">
+              <div class="category-tag">Tecnología</div>
+            </div>
+            <div class="article-content">
+              <h2>La IA que está revolucionando la forma en que trabajamos</h2>
+              <p>Un nuevo sistema de inteligencia artificial promete automatizar tareas repetitivas y aumentar la productividad en un 200%.</p>
+              <div class="article-meta">
+                <span><i class="far fa-clock"></i> Hace 2 días</span>
+                <span><i class="far fa-eye"></i> 15.2K</span>
+              </div>
+              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="social">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" alt="Tendencia en redes sociales">
+              <div class="category-tag">Social</div>
+            </div>
+            <div class="article-content">
+              <h2>El reto viral que está causando furor en TikTok</h2>
+              <p>Millones de usuarios están participando en este desafío que combina baile y solidaridad. ¿Te animarías a intentarlo?</p>
+              <div class="article-meta">
+                <span><i class="far fa-clock"></i> Hace 1 día</span>
+                <span><i class="far fa-eye"></i> 23.7K</span>
+              </div>
+              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="tech">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" alt="Ciberseguridad">
+              <div class="category-tag">Seguridad</div>
+            </div>
+            <div class="article-content">
+              <h2>Alerta: Nueva forma de hackeo afecta a millones de usuarios</h2>
+              <p>Expertos advierten sobre una sofisticada técnica de phishing que ha comprometido datos de usuarios en todo el mundo.</p>
+              <div class="article-meta">
+                <span><i class="far fa-clock"></i> Hace 3 días</span>
+                <span><i class="far fa-eye"></i> 12.5K</span>
+              </div>
+              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="entertainment">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" alt="Streaming">
+              <div class="category-tag">Entretenimiento</div>
+            </div>
+            <div class="article-content">
+              <h2>La serie que todos están viendo: un fenómeno global</h2>
+              <p>Esta producción se ha convertido en la más vista de la historia en menos de una semana. ¿Ya la viste?</p>
+              <div class="article-meta">
+                <span><i class="far fa-clock"></i> Hace 1 día</span>
+                <span><i class="far fa-eye"></i> 28.9K</span>
+              </div>
+              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="tech">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" alt="Programación">
+              <div class="category-tag">Tecnología</div>
+            </div>
+            <div class="article-content">
+              <h2>El lenguaje de programación que todos deberían aprender en 2025</h2>
+              <p>Expertos afirman que dominar este lenguaje podría disparar tus oportunidades laborales y tu salario.</p>
+              <div class="article-meta">
+                <span><i class="far fa-clock"></i> Hace 4 días</span>
+                <span><i class="far fa-eye"></i> 10.3K</span>
+              </div>
+              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="article-card" data-category="social">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb" alt="Ciencia">
+              <div class="category-tag">Ciencia</div>
+            </div>
+            <div class="article-content">
+              <h2>Descubrimiento astronómico que podría cambiar nuestra comprensión del universo</h2>
+              <p>Un equipo internacional de científicos ha detectado señales nunca antes vistas que podrían revolucionar la astrofísica.</p>
+              <div class="article-meta">
+                <span><i class="far fa-clock"></i> Hace 2 días</span>
+                <span><i class="far fa-eye"></i> 19.1K</span>
+              </div>
+              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+        
+        <div class="load-more">
+          <button id="load-more-btn">Cargar más <i class="fas fa-redo"></i></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <div class="logo">Viral<span>Pulse</span></div>
+          <p>Tu fuente diaria de tendencias, noticias y comedia.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="tendencias.html">Tendencias</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="humor.html">Comedia</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Síguenos</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 ViralPulse. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
