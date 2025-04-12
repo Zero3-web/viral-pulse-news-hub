@@ -70,7 +70,7 @@
               <div class="article-author">Por Diego Pecho</div>
               <h2>Famoso banco eliminará cuentas desde HOY por no cumplir con este requisito: tu dinero está en PELIGRO</h2>
               <p>Importantes cambios en las políticas bancarias afectarán a miles de usuarios. Entérate qué debes hacer para proteger tus ahorros.</p>
-              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+              <a href="articulo.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
           
@@ -83,7 +83,7 @@
               <div class="article-content">
                 <div class="article-author">Por Espectáculos</div>
                 <h3>Jefferson Farfán hace ACUSACIÓN contra Darinka Ramírez sobre su hija y se NIEGA a separarse de ella</h3>
-                <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                <a href="articulo.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
               </div>
             </article>
             
@@ -95,7 +95,7 @@
               <div class="article-content">
                 <div class="article-author">Por Estefani Hoyos</div>
                 <h3>Darinka Ramírez pide más de 3 mil soles de pensión alimenticia a Jefferson Farfán y otros pagos</h3>
-                <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                <a href="articulo.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
               </div>
             </article>
             
@@ -107,7 +107,7 @@
               <div class="article-content">
                 <div class="article-author">Por Actualidad</div>
                 <h3>Sicarios matan sin piedad a joven madre cerca de comisaría del Callao: deja dos hijos en la orfandad</h3>
-                <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                <a href="articulo.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
               </div>
             </article>
           </div>
@@ -118,8 +118,17 @@
     <section class="featured">
       <div class="container">
         <h2 class="section-title">Artículos Destacados</h2>
+        
+        <div class="category-filters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="tecnologia">Tecnología</button>
+          <button class="filter-btn" data-filter="social">Social</button>
+          <button class="filter-btn" data-filter="seguridad">Seguridad</button>
+          <button class="filter-btn" data-filter="actualidad">Actualidad</button>
+        </div>
+        
         <div class="featured-articles">
-          <article class="featured-article">
+          <article class="featured-article article-card" data-category="tecnologia">
             <div class="article-image">
               <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" alt="Tecnología del futuro">
               <div class="category-tag">Tecnología</div>
@@ -127,11 +136,11 @@
             <div class="article-content">
               <h2>La IA que está revolucionando la forma en que trabajamos</h2>
               <p>Un nuevo sistema de inteligencia artificial promete automatizar tareas repetitivas y aumentar la productividad en un 200%.</p>
-              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+              <a href="articulo.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
             </div>
           </article>
 
-          <article class="featured-article">
+          <article class="featured-article article-card" data-category="social">
             <div class="article-image">
               <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" alt="Tendencia en redes sociales">
               <div class="category-tag">Social</div>
@@ -139,11 +148,11 @@
             <div class="article-content">
               <h2>El reto viral que está causando furor en TikTok</h2>
               <p>Millones de usuarios están participando en este desafío que combina baile y solidaridad. ¿Te animarías a intentarlo?</p>
-              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+              <a href="articulo.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
             </div>
           </article>
 
-          <article class="featured-article">
+          <article class="featured-article article-card" data-category="seguridad">
             <div class="article-image">
               <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" alt="Ciberseguridad">
               <div class="category-tag">Seguridad</div>
@@ -151,7 +160,7 @@
             <div class="article-content">
               <h2>Alerta: Nueva forma de hackeo afecta a millones de usuarios</h2>
               <p>Expertos advierten sobre una sofisticada técnica de phishing que ha comprometido datos de usuarios en todo el mundo.</p>
-              <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+              <a href="articulo.html" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
             </div>
           </article>
         </div>
@@ -173,6 +182,10 @@
           <a href="humor.html" class="category-btn">
             <i class="fas fa-laugh-beam"></i>
             <span>Comedia</span>
+          </a>
+          <a href="admin/dashboard.html" class="category-btn">
+            <i class="fas fa-cog"></i>
+            <span>Admin</span>
           </a>
         </div>
       </div>
@@ -227,6 +240,39 @@
     </div>
   </footer>
 
+  <!-- Sidebar Móvil -->
+  <div class="mobile-sidebar" id="mobileSidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">Viral<span>Pulse</span></div>
+      <button id="closeSidebar"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a href="tendencias.html"><i class="fas fa-chart-line"></i> Tendencias</a></li>
+        <li><a href="noticias.html"><i class="fas fa-newspaper"></i> Noticias</a></li>
+        <li><a href="humor.html"><i class="fas fa-laugh-beam"></i> Comedia</a></li>
+        <li class="divider"></li>
+        <li><a href="#" class="sidebar-category"><i class="fas fa-laptop-code"></i> Tecnología</a></li>
+        <li><a href="#" class="sidebar-category"><i class="fas fa-users"></i> Social</a></li>
+        <li><a href="#" class="sidebar-category"><i class="fas fa-shield-alt"></i> Seguridad</a></li>
+        <li><a href="#" class="sidebar-category"><i class="fas fa-globe"></i> Actualidad</a></li>
+        <li><a href="#" class="sidebar-category"><i class="fas fa-film"></i> Espectáculos</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="theme-toggle">
+        <span>Tema:</span>
+        <input type="checkbox" id="sidebar-theme-switch" class="theme-switch">
+        <label for="sidebar-theme-switch" class="theme-label">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+          <div class="ball"></div>
+        </label>
+      </div>
+    </div>
+  </div>
+
   <!-- Resultados de búsqueda modal -->
   <div class="search-results-modal" id="searchResultsModal">
     <div class="search-results-content">
@@ -239,6 +285,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container" id="toastContainer"></div>
 
   <!-- Add the Lovable script tag for enabling new features -->
   <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>

@@ -1,4 +1,3 @@
-
 // Wait for DOM to fully load
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializar tema
@@ -531,4 +530,415 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    
+    // Mejoras a las notificaciones toast
+    function showToast(type, message) {
+        const toastContainer = document.getElementById('toastContainer');
+        
+        if (!toastContainer) {
+            // Crear el contenedor de toast si no existe
+            const container = document.createElement('div');
+            container.className = 'toast-container';
+            container.id = 'toastContainer';
+            document.body.appendChild(container);
+        }
+        
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        
+        // Icono según tipo
+        let icon = '';
+        switch (type) {
+            case 'success':
+                icon = '<i class="fas fa-check-circle toast-icon"></i>';
+                break;
+            case 'error':
+                icon = '<i class="fas fa-times-circle toast-icon"></i>';
+                break;
+            case 'info':
+                icon = '<i class="fas fa-info-circle toast-icon"></i>';
+                break;
+            case 'warning':
+                icon = '<i class="fas fa-exclamation-triangle toast-icon"></i>';
+                break;
+        }
+        
+        toast.innerHTML = `
+            ${icon}
+            <div class="toast-message">${message}</div>
+            <button class="toast-close"><i class="fas fa-times"></i></button>
+            <div class="toast-progress"></div>
+        `;
+        
+        document.getElementById('toastContainer').appendChild(toast);
+        
+        // Animación de entrada
+        setTimeout(() => {
+            toast.style.transform = 'translateX(0)';
+            toast.style.opacity = '1';
+        }, 10);
+        
+        // Cerrar toast al hacer clic en el botón
+        const closeButton = toast.querySelector('.toast-close');
+        closeButton.addEventListener('click', () => {
+            removeToast(toast);
+        });
+        
+        // Auto-cerrar después de 3 segundos
+        setTimeout(() => {
+            removeToast(toast);
+        }, 3000);
+    }
+
+    function removeToast(toast) {
+        toast.style.transform = 'translateX(100%)';
+        toast.style.opacity = '0';
+        
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    }
+
+    // Menú lateral para móviles
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const closeSidebar = document.getElementById('closeSidebar');
+    
+    // Crear el menú lateral si no existe
+    if (!mobileSidebar) {
+        const sidebar = document.createElement('div');
+        sidebar.className = 'mobile-sidebar';
+        sidebar.id = 'mobileSidebar';
+        
+        sidebar.innerHTML = `
+            <div class="sidebar-header">
+                <div class="sidebar-logo">Viral<span>Pulse</span></div>
+                <button id="closeSidebar"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="tendencias.html"><i class="fas fa-chart-line"></i> Tendencias</a></li>
+                    <li><a href="noticias.html"><i class="fas fa-newspaper"></i> Noticias</a></li>
+                    <li><a href="humor.html"><i class="fas fa-laugh-beam"></i> Comedia</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" class="sidebar-category"><i class="fas fa-laptop-code"></i> Tecnología</a></li>
+                    <li><a href="#" class="sidebar-category"><i class="fas fa-users"></i> Social</a></li>
+                    <li><a href="#" class="sidebar-category"><i class="fas fa-shield-alt"></i> Seguridad</a></li>
+                    <li><a href="#" class="sidebar-category"><i class="fas fa-globe"></i> Actualidad</a></li>
+                    <li><a href="#" class="sidebar-category"><i class="fas fa-film"></i> Espectáculos</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="theme-toggle">
+                    <span>Tema:</span>
+                    <input type="checkbox" id="sidebar-theme-switch" class="theme-switch">
+                    <label for="sidebar-theme-switch" class="theme-label">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                        <div class="ball"></div>
+                    </label>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(sidebar);
+    }
+    
+    // Reinicializar variables después de crear el sidebar dinámicamente
+    const updatedMobileSidebar = document.getElementById('mobileSidebar');
+    const updatedCloseSidebar = document.getElementById('closeSidebar');
+    
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            if (updatedMobileSidebar) {
+                updatedMobileSidebar.classList.add('active');
+                
+                // Añadir overlay para cerrar el sidebar
+                const overlay = document.createElement('div');
+                overlay.className = 'sidebar-overlay';
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.background = 'rgba(0, 0, 0, 0.5)';
+                overlay.style.zIndex = '1999';
+                overlay.style.opacity = '0';
+                overlay.style.transition = 'opacity 0.3s ease';
+                document.body.appendChild(overlay);
+                
+                // Mostrar el overlay con transición
+                setTimeout(() => {
+                    overlay.style.opacity = '1';
+                }, 10);
+                
+                // Cerrar sidebar al hacer clic en el overlay
+                overlay.addEventListener('click', function() {
+                    updatedMobileSidebar.classList.remove('active');
+                    this.style.opacity = '0';
+                    setTimeout(() => {
+                        this.remove();
+                    }, 300);
+                });
+                
+                // Cerrar el menú móvil si estaba abierto
+                nav.classList.remove('active');
+                menuBtn.classList.remove('active');
+                const spans = menuBtn.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    }
+    
+    if (updatedCloseSidebar) {
+        updatedCloseSidebar.addEventListener('click', function() {
+            updatedMobileSidebar.classList.remove('active');
+            const overlay = document.querySelector('.sidebar-overlay');
+            if (overlay) {
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.remove();
+                }, 300);
+            }
+        });
+    }
+    
+    // Sincronizar el tema del sidebar con el principal
+    const sidebarThemeSwitch = document.getElementById('sidebar-theme-switch');
+    const mainThemeSwitch = document.getElementById('theme-switch');
+    
+    if (sidebarThemeSwitch && mainThemeSwitch) {
+        // Establecer estado inicial
+        sidebarThemeSwitch.checked = mainThemeSwitch.checked;
+        
+        // Sincronizar cambios
+        sidebarThemeSwitch.addEventListener('change', function() {
+            mainThemeSwitch.checked = this.checked;
+            
+            if (this.checked) {
+                document.documentElement.classList.remove('dark-mode');
+                document.documentElement.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.remove('light-mode');
+                document.documentElement.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
+    
+    // Hacer que los artículos sean clickeables
+    const makeArticlesClickable = () => {
+        const articleImages = document.querySelectorAll('.article-image');
+        const readMoreLinks = document.querySelectorAll('.read-more');
+        
+        articleImages.forEach(image => {
+            if (!image.closest('a')) { // Verificar que no esté ya dentro de un enlace
+                image.style.cursor = 'pointer';
+                image.addEventListener('click', function() {
+                    const article = this.closest('article');
+                    if (article) {
+                        const readMore = article.querySelector('.read-more');
+                        if (readMore && readMore.getAttribute('href')) {
+                            location.href = readMore.getAttribute('href');
+                        } else {
+                            // Si no hay enlace, llevar a la página de artículo de ejemplo
+                            location.href = 'articulo.html';
+                        }
+                    }
+                });
+            }
+        });
+        
+        readMoreLinks.forEach(link => {
+            if (link.getAttribute('href') === '#' || !link.getAttribute('href')) {
+                link.setAttribute('href', 'articulo.html');
+            }
+        });
+    };
+    
+    // Llamar a la función para hacer clickeables los artículos
+    makeArticlesClickable();
+    
+    // Mostrar un toast de bienvenida
+    setTimeout(() => {
+        showToast('info', '¡Bienvenido a ViralPulse! Descubre las últimas noticias virales.');
+    }, 1500);
+    
+    // Mejorar filtros de categoría con estilos
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+            if (!btn.classList.contains('active')) {
+                btn.style.transform = 'translateY(-5px)';
+                btn.style.boxShadow = '0 8px 15px rgba(0, 0, 0, 0.2)';
+            }
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            if (!btn.classList.contains('active')) {
+                btn.style.transform = 'translateY(0)';
+                btn.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    });
+    
+    // Optimizar carga de imágenes
+    const optimizeImages = () => {
+        const images = document.querySelectorAll('img');
+        
+        images.forEach(img => {
+            // No aplicar a imágenes pequeñas como avatares
+            if (img.closest('.comment-avatar') || img.closest('.admin-avatar') || img.closest('.article-author')) {
+                return;
+            }
+            
+            const parent = img.parentElement;
+            parent.classList.add('image-loading');
+            
+            img.addEventListener('load', function() {
+                parent.classList.remove('image-loading');
+                this.style.animation = 'fadeIn 0.5s ease forwards';
+            });
+            
+            img.addEventListener('error', function() {
+                parent.classList.remove('image-loading');
+                this.src = 'https://via.placeholder.com/800x450?text=Imagen+no+disponible';
+            });
+            
+            // Añadir efecto de zoom en hover
+            img.addEventListener('mouseenter', function() {
+                if (!this.closest('.comment-avatar') && !this.closest('.admin-avatar') && !this.closest('.article-author')) {
+                    this.style.transform = 'scale(1.05)';
+                    this.style.transition = 'transform 0.5s ease';
+                }
+            });
+            
+            img.addEventListener('mouseleave', function() {
+                if (!this.closest('.comment-avatar') && !this.closest('.admin-avatar') && !this.closest('.article-author')) {
+                    this.style.transform = 'scale(1)';
+                }
+            });
+        });
+    };
+    
+    // Llamar a la función para optimizar imágenes
+    optimizeImages();
+    
+    // Añadir transición de página
+    document.body.classList.add('page-transition');
+    
+    // Formulario de comentarios
+    const commentForm = document.querySelector('.comment-form');
+    
+    if (commentForm) {
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const textarea = this.querySelector('textarea');
+            const commentText = textarea.value.trim();
+            
+            if (commentText) {
+                // Crear un nuevo comentario
+                const commentsContainer = document.querySelector('.comments-container');
+                const newComment = document.createElement('div');
+                newComment.className = 'comment';
+                newComment.innerHTML = `
+                    <div class="comment-avatar">
+                        <img src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f" alt="Usuario actual">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">Tú</span>
+                            <span class="comment-date">Justo ahora</span>
+                        </div>
+                        <p>${commentText}</p>
+                        <div class="comment-actions">
+                            <button class="comment-reply-btn">Responder</button>
+                            <button class="comment-like-btn"><i class="far fa-heart"></i> <span>0</span></button>
+                        </div>
+                    </div>
+                `;
+                
+                // Aplicar animación al nuevo comentario
+                newComment.style.opacity = '0';
+                newComment.style.transform = 'translateY(20px)';
+                
+                // Agregar al principio de los comentarios
+                commentsContainer.insertBefore(newComment, commentsContainer.firstChild);
+                
+                // Mostrar con animación
+                setTimeout(() => {
+                    newComment.style.opacity = '1';
+                    newComment.style.transform = 'translateY(0)';
+                    newComment.style.transition = 'all 0.3s ease';
+                }, 10);
+                
+                // Limpiar el textarea
+                textarea.value = '';
+                
+                // Mostrar toast de éxito
+                showToast('success', '¡Comentario publicado con éxito!');
+            }
+        });
+    }
+    
+    // Añadir funcionalidad a los botones de me gusta de comentarios
+    const commentLikeButtons = document.querySelectorAll('.comment-like-btn');
+    
+    commentLikeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            const count = this.querySelector('span');
+            const currentCount = parseInt(count.textContent);
+            
+            if (icon.classList.contains('far')) { // No le ha dado like
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                count.textContent = currentCount + 1;
+                
+                // Efecto de animación al corazón
+                icon.style.transform = 'scale(1.5)';
+                icon.style.color = '#EF4444';
+                setTimeout(() => {
+                    icon.style.transform = 'scale(1)';
+                }, 300);
+                
+                showToast('success', '¡Te gusta este comentario!');
+            } else { // Ya le dio like
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                count.textContent = currentCount - 1;
+                icon.style.color = '';
+            }
+        });
+    });
+    
+    // Implementar barra de progreso en todas las páginas
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        
+        if (progressBar) {
+            progressBar.style.width = scrolled + '%';
+            
+            // Efecto de brillo al alcanzar ciertos puntos
+            if (scrolled > 25 && scrolled < 30 || 
+                scrolled > 50 && scrolled < 55 || 
+                scrolled > 75 && scrolled < 80 || 
+                scrolled > 95) {
+                progressBar.style.boxShadow = '0 0 10px var(--accent-purple), 0 0 20px var(--accent-orange)';
+                progressBar.style.transition = 'width 0.2s ease, box-shadow 0.3s ease';
+                
+                setTimeout(() => {
+                    progressBar.style.boxShadow = 'none';
+                }, 500);
+            }
+        }
+    });
 });

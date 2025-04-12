@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="es" class="dark-mode">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViralPulse - Dashboard de Administración</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Barra de progreso -->
+  <div class="progress-container">
+    <div class="progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <header>
+    <div class="logo">Viral<span>Pulse</span></div>
+    
+    <div class="admin-badge">
+      <span>Admin Dashboard</span>
+    </div>
+    
+    <nav>
+      <ul>
+        <li><a href="../index.html">Ver Sitio</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="articulos.html">Artículos</a></li>
+        <li><a href="configuracion.html">Configuración</a></li>
+      </ul>
+    </nav>
+    
+    <div class="theme-toggle">
+      <input type="checkbox" id="theme-switch" class="theme-switch">
+      <label for="theme-switch" class="theme-label">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+        <div class="ball"></div>
+      </label>
+    </div>
+    
+    <div class="mobile-menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <div class="admin-sidebar" id="adminSidebar">
+    <div class="sidebar-header">
+      <div class="admin-avatar">
+        <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d" alt="Admin">
+      </div>
+      <h3>Editor Principal</h3>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="articulos.html"><i class="fas fa-newspaper"></i> Artículos</a></li>
+        <li><a href="categorias.html"><i class="fas fa-tags"></i> Categorías</a></li>
+        <li><a href="media.html"><i class="fas fa-images"></i> Media</a></li>
+        <li><a href="estadisticas.html"><i class="fas fa-chart-bar"></i> Estadísticas</a></li>
+        <li><a href="usuarios.html"><i class="fas fa-users"></i> Usuarios</a></li>
+        <li><a href="configuracion.html"><i class="fas fa-cog"></i> Configuración</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../index.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+    </div>
+  </div>
+
+  <main class="admin-main">
+    <div class="dashboard-container">
+      <div class="dashboard-header">
+        <h1>Dashboard</h1>
+        <div class="dashboard-actions">
+          <button id="newArticleBtn" class="admin-btn primary"><i class="fas fa-plus"></i> Nuevo Artículo</button>
+          <button class="admin-btn secondary"><i class="fas fa-sync-alt"></i> Actualizar</button>
+        </div>
+      </div>
+
+      <div class="dashboard-stats">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-newspaper"></i></div>
+          <div class="stat-content">
+            <h3>Artículos Totales</h3>
+            <p class="stat-number">36</p>
+            <p class="stat-trend positive"><i class="fas fa-arrow-up"></i> 12% esta semana</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-eye"></i></div>
+          <div class="stat-content">
+            <h3>Visitas</h3>
+            <p class="stat-number">15.8K</p>
+            <p class="stat-trend positive"><i class="fas fa-arrow-up"></i> 8% esta semana</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-content">
+            <h3>Suscriptores</h3>
+            <p class="stat-number">2.4K</p>
+            <p class="stat-trend positive"><i class="fas fa-arrow-up"></i> 5% esta semana</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-comments"></i></div>
+          <div class="stat-content">
+            <h3>Comentarios</h3>
+            <p class="stat-number">428</p>
+            <p class="stat-trend negative"><i class="fas fa-arrow-down"></i> 3% esta semana</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="dashboard-section">
+          <div class="section-header">
+            <h2>Artículos Recientes</h2>
+            <a href="articulos.html" class="view-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="recent-articles">
+            <div class="article-row">
+              <div class="article-cell"><img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" alt="Tech"></div>
+              <div class="article-cell title">La IA que está revolucionando la forma en que trabajamos</div>
+              <div class="article-cell">Tecnología</div>
+              <div class="article-cell">5.2K vistas</div>
+              <div class="article-cell status published">Publicado</div>
+              <div class="article-cell actions">
+                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+            <div class="article-row">
+              <div class="article-cell"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" alt="Social"></div>
+              <div class="article-cell title">El reto viral que está causando furor en TikTok</div>
+              <div class="article-cell">Social</div>
+              <div class="article-cell">3.7K vistas</div>
+              <div class="article-cell status published">Publicado</div>
+              <div class="article-cell actions">
+                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+            <div class="article-row">
+              <div class="article-cell"><img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" alt="Security"></div>
+              <div class="article-cell title">Alerta: Nueva forma de hackeo afecta a millones de usuarios</div>
+              <div class="article-cell">Seguridad</div>
+              <div class="article-cell">2.9K vistas</div>
+              <div class="article-cell status draft">Borrador</div>
+              <div class="article-cell actions">
+                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-section">
+          <div class="section-header">
+            <h2>Rendimiento por Categoría</h2>
+          </div>
+          <div class="category-chart">
+            <canvas id="categoryChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de Nuevo Artículo -->
+  <div class="admin-modal" id="newArticleModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Crear Nuevo Artículo</h2>
+        <button class="close-modal"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="newArticleForm">
+          <div class="form-group">
+            <label for="articleTitle">Título</label>
+            <input type="text" id="articleTitle" placeholder="Ingresa el título del artículo" required>
+          </div>
+          <div class="form-group">
+            <label for="articleCategory">Categoría</label>
+            <select id="articleCategory" required>
+              <option value="">Seleccionar categoría</option>
+              <option value="tecnologia">Tecnología</option>
+              <option value="social">Social</option>
+              <option value="seguridad">Seguridad</option>
+              <option value="actualidad">Actualidad</option>
+              <option value="espectaculos">Espectáculos</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="articleImage">Imagen</label>
+            <div class="image-upload">
+              <input type="file" id="articleImage" accept="image/*">
+              <div class="upload-placeholder">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Arrastra una imagen o haz clic para seleccionar</p>
+              </div>
+              <div class="image-preview" id="imagePreview"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="articleContent">Contenido</label>
+            <textarea id="articleContent" rows="10" placeholder="Escribe el contenido del artículo aquí..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="articleStatus">Estado</label>
+            <div class="status-toggle">
+              <input type="radio" id="statusPublish" name="articleStatus" value="published" checked>
+              <label for="statusPublish">Publicar</label>
+              <input type="radio" id="statusDraft" name="articleStatus" value="draft">
+              <label for="statusDraft">Borrador</label>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="admin-btn secondary close-modal">Cancelar</button>
+            <button type="submit" class="admin-btn primary">Guardar Artículo</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Sidebar Toggle for Mobile -->
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <script src="../script.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
